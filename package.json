@@ -1,0 +1,9 @@
+{
+  "name": "desci-boilerplate",
+  "version": "0.1.0",
+  "description": "Boilerplate project for DeSci applications.",
+  "main": "index.js",
+  "repository": "https://github.com/DeSci/boilerplate",
+  "author": "alkhe <raphaeljmu@gmail.com>",
+  "license": "MIT"
+}
