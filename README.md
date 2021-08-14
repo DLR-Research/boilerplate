@@ -10,6 +10,7 @@ $ yarn dev
 - Next.js  
 - TypeScript  
 - ESLint  
+- Emotion
 
 ## References
 
