@@ -72,7 +72,9 @@ interface TodoItemProps {
 function TodoItemComponent(props: TodoItemProps) {
   return (
     <TodoItemContainer>
-      <div css={ [weight(), props.todo.completed && css`text-decoration: line-through`] }>
+      <div
+        css={ [weight(), props.todo.completed && css`text-decoration: line-through`] }
+        className='TodoItemTitle'>
         { props.todo.title }
       </div>
       <IconContainer onClick={ props.onDelete } hoverColor='#f64d4d'>
@@ -138,7 +140,7 @@ export default function TodoApp(): JSX.Element {
       <Row justify='center'>
         <TodoAppContainer>
           <Row>
-            <TitleInput
+            <TitleInput className='TitleInput'
               value={ new_todo_title }
               onChange={ e => set_new_todo_title(e.target.value) }
               onKeyDown={ title_input_keypress }
@@ -149,7 +151,9 @@ export default function TodoApp(): JSX.Element {
               <PlusIcon />
             </IconContainer>
           </Row>
-          { todos.map(t => <TodoItemComponent todo={ t } key={ t.id } onDelete={ () => handle_delete_todo(t.id) } onToggleComplete={ () => handle_toggle_complete_todo(t.id) } />) }
+          <div id='TodoList'>
+            { todos.map(t => <TodoItemComponent todo={ t } key={ t.id } onDelete={ () => handle_delete_todo(t.id) } onToggleComplete={ () => handle_toggle_complete_todo(t.id) } />) }
+          </div>
         </TodoAppContainer>
       </Row>
     </div>

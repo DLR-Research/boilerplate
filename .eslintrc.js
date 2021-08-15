@@ -17,5 +17,9 @@ module.exports = {
       node: false,
       browser: true
     }
-  }]
+  }],
+  rules: {
+    'no-empty-pattern': 0,
+    '@typescript-eslint/no-non-null-assertion': 0
+  }
 }
