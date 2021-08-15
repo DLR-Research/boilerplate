@@ -8,7 +8,7 @@ font-family: 'Fira Code';
 
 padding-top: 3rem;
 padding-left: 2rem;
-width: calc(100% - 40px);
+width: calc(100% - 4rem);
 
 @media (min-width: 769px) {
   padding-top: 6rem;
@@ -27,7 +27,7 @@ const TopText = styled.div`
 > * {
   color: #eee;
   background: #333;
-  margin-left: -1rem;
+  margin: 0 -1rem;
   padding: .5rem 1rem
 }
 `
