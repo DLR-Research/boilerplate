@@ -1,71 +1,53 @@
 /** @jsxImportSource @emotion/react */
 import styled from '@emotion/styled'
-import { ThemeProvider } from '@emotion/react'
 import Head from 'next/head'
 import { FaGithub, FaTwitter, FaDiscord, FaReddit } from 'react-icons/fa'
-
-interface FlexProps {
-  align?: string
-  justify?: string
-}
-
-const Row = styled.div<FlexProps>`
-display: flex;
-${ props => props.align ? 'align-items: ' + props.align + ';' : '' }
-${ props => props.justify ? 'justify-content: ' + props.justify + ';' : '' }
-`
-
-const Column = styled.div<FlexProps>`
-display: flex;
-flex-direction: column;
-${ props => props.align ? 'align-items: ' + props.align + ';' : '' }
-${ props => props.justify ? 'justify-content: ' + props.justify + ';' : '' }
-`
-
-interface CellProps {
-  weight?: number
-}
-
-const Cell = styled.div<CellProps>`
-flex: ${ props => props.weight || 1 }
-`
 
 const Container = styled.div`
 font-family: 'Fira Code';
 
-padding-top: 30px;
-padding-left: 20px;
+padding-top: 3rem;
+padding-left: 2rem;
 width: calc(100% - 40px);
 
 @media (min-width: 769px) {
-  padding-top: 60px;
-  padding-left: 50px;
+  padding-top: 6rem;
+  padding-left: 5rem;
   width: 669px;
 }
 
 @media (min-width: 1025px) {
-  padding-top: 90px;
-  padding-left: 100px;
+  padding-top: 9rem;
+  padding-left: 10rem;
   width: 800px;
+}
+`
+
+const TopText = styled.div`
+> * {
+  color: #eee;
+  background: #333;
+  margin-left: -1rem;
+  padding: .5rem 1rem
 }
 `
 
 const Headline = styled.div`
 font-size: 5rem;
 font-weight: 800;
-color: #222;
+display: inline-block;
 `
 
 const Subtitle = styled.div`
 font-size: 1.6rem;
-color: #444;
+display: inline-block;
 `
 
 const Socials = styled.div`
 font-size: 1.5rem;
 
 > * {
-  color: #ccc;
+  color: #bbb;
 
   &:not(:first-child) {
     padding-left: .5rem;
@@ -96,12 +78,15 @@ function Home(): JSX.Element {
         <title>DeSci &middot; Home</title>
       </Head>
       <Container>
-        <Headline>
-          DeSci
-        </Headline>
-        <Subtitle>
-          Building a new research economy.
-        </Subtitle>
+        <TopText>
+          <Headline>
+            DeSci
+          </Headline>
+          <br />
+          <Subtitle>
+            Building a new research economy.
+          </Subtitle>
+        </TopText>
         <br />
         <Socials>
           <SocialLink hoverColor='#333' href='https://github.com/DeSci'>
