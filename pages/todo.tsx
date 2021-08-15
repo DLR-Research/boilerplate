@@ -5,6 +5,7 @@ import styled from '@emotion/styled'
 import { PlusIcon, XIcon, CheckIcon } from '@heroicons/react/solid'
 import { Row, Column, Cell, weight } from '../components/flex'
 import cuid from 'cuid'
+import Head from 'next/head'
 
 const TodoAppContainer = styled.div`
 font-family: 'Fira Code';
@@ -130,23 +131,28 @@ export default function TodoApp(): JSX.Element {
   }
 
   return (
-    <Row justify='center'>
-      <TodoAppContainer>
-        <Row>
-          <TitleInput
-            value={ new_todo_title }
-            onChange={ e => set_new_todo_title(e.target.value) }
-            onKeyDown={ title_input_keypress }
-            ref={ title_ref }
-            css={ weight() }
-            placeholder='I have to do...' />
-          <IconContainer onClick={ add_new_todo } align='center' hoverColor='#33a9ee'>
-            <PlusIcon />
-          </IconContainer>
-        </Row>
-        { todos.map(t => <TodoItemComponent todo={ t } key={ t.id } onDelete={ () => handle_delete_todo(t.id) } onToggleComplete={ () => handle_toggle_complete_todo(t.id) } />) }
-      </TodoAppContainer>
-    </Row>
+    <div>
+      <Head>
+        <title>DeSci &middot; Todo</title>
+      </Head>
+      <Row justify='center'>
+        <TodoAppContainer>
+          <Row>
+            <TitleInput
+              value={ new_todo_title }
+              onChange={ e => set_new_todo_title(e.target.value) }
+              onKeyDown={ title_input_keypress }
+              ref={ title_ref }
+              css={ weight() }
+              placeholder='I have to do...' />
+            <IconContainer onClick={ add_new_todo } align='center' hoverColor='#33a9ee'>
+              <PlusIcon />
+            </IconContainer>
+          </Row>
+          { todos.map(t => <TodoItemComponent todo={ t } key={ t.id } onDelete={ () => handle_delete_todo(t.id) } onToggleComplete={ () => handle_toggle_complete_todo(t.id) } />) }
+        </TodoAppContainer>
+      </Row>
+    </div>
   )
 }
 
