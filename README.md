@@ -13,7 +13,8 @@ Live Preview at [https://boilerplate-desci.vercel.app/](https://boilerplate-desc
 - TypeScript  
 - ESLint  
 - Emotion  
-- Playwright
+- Playwright  
+- GraphQL
 
 ## References
 
