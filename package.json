@@ -14,7 +14,7 @@
     "express-graphql": "^0.12.0",
     "gqtx": "0.8.1-348cf7b3.0",
     "graphql": "^15.5.1",
-    "next": "^11.1.0",
+    "next": "^11.1.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-icons": "^4.2.0",
